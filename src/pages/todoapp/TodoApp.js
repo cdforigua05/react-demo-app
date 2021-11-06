@@ -21,20 +21,23 @@ export const TodoApp = () => {
       type: 'add',
       payload: newTodo,
     });
-  }
-  const handleDelete = (id)=>{
-    dispatch({
-      type:"delete",
-      payload: id
-    })
-  }
+  };
 
-  const handleToggle = (id)=>{
+  const handleDelete = (todoId) => {
+    const action = {
+      type: 'delete',
+      payload: todoId,
+    };
+
+    dispatch(action);
+  };
+
+  const handleToggle = (todoId) => {
     dispatch({
-      type: "toggle",
-      payload: id
-    })
-  }
+      type: 'toggle',
+      payload: todoId,
+    });
+  };
 
   return (
     <div className='todo-container'>
@@ -43,7 +46,11 @@ export const TodoApp = () => {
 
       <div className='row'>
         <div className='col-7'>
-          <TodoList todos={todos} handleDelete={handleDelete} handleToggle={handleToggle} />
+          <TodoList
+            todos={todos}
+            handleDelete={handleDelete}
+            handleToggle={handleToggle}
+          />
         </div>
 
         <div className='col-5'>
