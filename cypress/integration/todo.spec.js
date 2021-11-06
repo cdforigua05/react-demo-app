@@ -22,19 +22,19 @@ describe('TODOS page', () => {
       .should('have.class', 'complete');
   });
 
-  it('should delete a TODO item', ()=>{
+  it('should delete a TODO', () => {
     cy.visit('todo')
       .get('input')
-      .type('new TODO')
-      .get('buttom[type=submit]')
+      .type('TODO 1')
+      .get('button[type=submit]')
       .click()
       .get('input')
-      .type('new TODO')
-      .get('buttom[type=submit]')
+      .type('TODO 2')
+      .get('button[type=submit]')
       .click()
       .get('input')
-      .type('new TODO')
-      .get('buttom[type=submit]')
+      .type('TODO 3')
+      .get('button[type=submit]')
       .click()
       .get('.list-group > .list-group-item:first > button')
       .click()
